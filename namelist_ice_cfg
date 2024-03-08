@@ -1,0 +1,55 @@
+!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+!! NEMO/LIM-3 : Ice configuration namelist. Overwrites SHARED/namelist_ice_lim3_ref
+!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+!-----------------------------------------------------------------------
+&namicerun     !   Share parameters for dynamics/advection/thermo
+!-----------------------------------------------------------------------
+   jpl            =    5           !  number of ice  categories
+   nlay_i         =    2           !  number of ice  layers
+   nlay_s         =    1           !  number of snow layers (only 1 is working)
+   cn_icerst_in  = "ORCA025_UKESM_historical_01296000_restart_ice.nc"   !  suffix of ice restart name (input)
+   cn_icerst_indir = "./restarts_subsequent"           !  directory from which to read input ice restarts
+   cn_icerst_out = "restart_ice"   !  suffix of ice restart name (output)
+   cn_icerst_outdir = "./restarts_subsequent"          !  directory in which to write output ice restarts
+   ln_limdyn     = .true.          !  ice dynamics (T) or thermodynamics only (F)
+   rn_amax_n     = 0.999           !  maximum tolerated ice concentration NH
+   rn_amax_s     = 0.999           !  maximum tolerated ice concentration SH
+   ln_limdiahsb  = .false.         !  check the heat and salt budgets (T) or not (F)
+   ln_limdiaout  = .true.          !  output the heat and salt budgets (T) or not (F)
+   ln_icectl     = .false.         !  ice points output for debug (T or F)
+   iiceprt       = 10              !  i-index for debug
+   jiceprt       = 10              !  j-index for debug
+/
+!-----------------------------------------------------------------------
+&namiceini     !   ice initialisation
+!-----------------------------------------------------------------------
+/
+!-----------------------------------------------------------------------
+&namicedyn     !   ice dynamic
+!-----------------------------------------------------------------------
+/
+!------------------------------------------------------------------------------
+&namicehdf     !   Ice horizontal diffusion
+!------------------------------------------------------------------------------
+/
+!-----------------------------------------------------------------------
+&namicethd     !   ice thermodynamic
+!-----------------------------------------------------------------------
+/
+!-----------------------------------------------------------------------
+&namicesal     !   ice salinity
+!-----------------------------------------------------------------------
+/
+!-----------------------------------------------------------------------
+&namiceitdme   !   parameters for mechanical redistribution of ice
+!-----------------------------------------------------------------------
+/
+!-----------------------------------------------------------------------
+&namicedia     !   ice diagnostics
+!-----------------------------------------------------------------------
+/
+!------------------------------------------------------------------------------
+&namiceitd     !   Ice discretization
+!------------------------------------------------------------------------------
+/
